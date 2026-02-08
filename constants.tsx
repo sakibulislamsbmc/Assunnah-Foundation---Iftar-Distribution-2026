@@ -1,5 +1,4 @@
-
-import { GuidelineStep, PackageItem, Volunteer } from './types';
+import { GuidelineStep, PackageItem, Volunteer } from './types.ts';
 
 export const APP_LINKS = {
   RECIPIENT_REGISTRATION: "https://ee.kobo.asf.sh/x/E2KzbCY0",
