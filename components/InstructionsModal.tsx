@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { PROJECT_INSTRUCTIONS } from '../constants';
+import { PROJECT_INSTRUCTIONS } from '../constants.tsx';
 
 interface InstructionsModalProps {
   onClose: () => void;

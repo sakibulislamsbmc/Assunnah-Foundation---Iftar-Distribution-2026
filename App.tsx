@@ -1,16 +1,15 @@
-
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import RegistrationBanner from './components/RegistrationBanner';
-import VolunteerGuidelines from './components/VolunteerGuidelines';
-import VolunteerTutorial from './components/VolunteerTutorial';
-import PackageVisualizer from './components/PackageVisualizer';
-import VolunteerSearch from './components/VolunteerSearch';
-import Footer from './components/Footer';
-import InstructionsModal from './components/InstructionsModal';
-import PackageModal from './components/PackageModal';
-import DeveloperModal from './components/DeveloperModal';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import RegistrationBanner from './components/RegistrationBanner.tsx';
+import VolunteerGuidelines from './components/VolunteerGuidelines.tsx';
+import VolunteerTutorial from './components/VolunteerTutorial.tsx';
+import PackageVisualizer from './components/PackageVisualizer.tsx';
+import VolunteerSearch from './components/VolunteerSearch.tsx';
+import Footer from './components/Footer.tsx';
+import InstructionsModal from './components/InstructionsModal.tsx';
+import PackageModal from './components/PackageModal.tsx';
+import DeveloperModal from './components/DeveloperModal.tsx';
 
 const App: React.FC = () => {
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);

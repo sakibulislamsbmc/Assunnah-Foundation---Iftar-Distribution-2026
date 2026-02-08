@@ -1,7 +1,6 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
-import { VOLUNTEERS, APP_LINKS } from '../constants';
-import { Volunteer } from '../types';
+import { VOLUNTEERS, APP_LINKS } from '../constants.tsx';
+import { Volunteer } from '../types.ts';
 
 interface VolunteerSearchProps {
   forceDirectoryOpen?: boolean;
