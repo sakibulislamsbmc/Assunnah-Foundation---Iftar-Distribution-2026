@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import RegistrationBanner from './components/RegistrationBanner.tsx';
@@ -7,9 +7,11 @@ import VolunteerTutorial from './components/VolunteerTutorial.tsx';
 import PackageVisualizer from './components/PackageVisualizer.tsx';
 import VolunteerSearch from './components/VolunteerSearch.tsx';
 import Footer from './components/Footer.tsx';
-import InstructionsModal from './components/InstructionsModal.tsx';
-import PackageModal from './components/PackageModal.tsx';
-import DeveloperModal from './components/DeveloperModal.tsx';
+
+// Lazy load modals to improve initial load speed
+const InstructionsModal = lazy(() => import('./components/InstructionsModal.tsx'));
+const PackageModal = lazy(() => import('./components/PackageModal.tsx'));
+const DeveloperModal = lazy(() => import('./components/DeveloperModal.tsx'));
 
 const App: React.FC = () => {
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
@@ -18,7 +20,7 @@ const App: React.FC = () => {
   const [isDeveloperOpen, setIsDeveloperOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col islamic-pattern bg-opacity-10">
+    <div className="min-h-screen flex flex-col islamic-pattern bg-opacity-5">
       <Navbar />
       
       <main className="flex-grow">
@@ -55,18 +57,20 @@ const App: React.FC = () => {
 
       <Footer onOpenDeveloper={() => setIsDeveloperOpen(true)} />
 
-      {/* Global Modals */}
-      {isInstructionsOpen && (
-        <InstructionsModal onClose={() => setIsInstructionsOpen(false)} />
-      )}
-      
-      {isPackageOpen && (
-        <PackageModal onClose={() => setIsPackageOpen(false)} />
-      )}
+      {/* Conditional Rendering of Modals with Suspense for non-blocking UI */}
+      <Suspense fallback={null}>
+        {isInstructionsOpen && (
+          <InstructionsModal onClose={() => setIsInstructionsOpen(false)} />
+        )}
+        
+        {isPackageOpen && (
+          <PackageModal onClose={() => setIsPackageOpen(false)} />
+        )}
 
-      {isDeveloperOpen && (
-        <DeveloperModal onClose={() => setIsDeveloperOpen(false)} />
-      )}
+        {isDeveloperOpen && (
+          <DeveloperModal onClose={() => setIsDeveloperOpen(false)} />
+        )}
+      </Suspense>
     </div>
   );
 };
