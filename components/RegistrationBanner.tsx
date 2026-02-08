@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { APP_LINKS } from '../constants';
+import { APP_LINKS } from '../constants.tsx';
 
 const RegistrationBanner: React.FC = () => {
   return (

@@ -11,6 +11,8 @@ if (container) {
       <App />
     </React.StrictMode>
   );
+  // Mark as mounted for CSS transitions
+  container.classList.add('mounted');
 } else {
   console.error("Critical: 'root' element not found in DOM.");
 }
