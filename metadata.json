@@ -1,0 +1,8 @@
+{
+  "name": "Assunnah Foundation - Iftar Distribution 2026",
+  "description": "A comprehensive management and guideline platform for the Assunnah Foundation's Iftar Distribution Project 2026, featuring volunteer coordination, recipient registration, and project instructions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
